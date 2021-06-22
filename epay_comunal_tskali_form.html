@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>EPAY კომუნალური</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		body {
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		header {
+		  background-color: #666;
+		  padding: 20px;
+		  text-align: center;
+		  font-size: 20px;
+		  color: white;
+		}
+
+		footer {
+		  background-color: #777;
+		  padding: 10px;
+		  text-align: center;
+		  color: white;
+		}
+
+		@media (max-width: 600px) {
+		  article {
+			width: 100%;
+			height: auto;
+		  }
+		}
+		</style>
+	</head>
+	
+	<body>
+	
+
+	<header>
+	  <h2>EPAY კომუნალური => წყალი => გადახდა</h2>
+	</header>
+    <form id="F_qviTari" name="F_qviTari" action="epay_comunal_tskali_form_qviTari.html" method="GET">
+		<table border="0" align="center">
+		  <tr>
+			<td align="right">ქვითრის ნომერი: </td>
+			<td><input type="text" id="qviTari" name="qviTari" required>(5 თანრიგი)</td>
+		  </tr>
+		  <tr>
+			<td align="right">დავალიანება:</td>
+			<td><input type="text" id="davalianeba" name="davalianeba"></td>
+		  </tr>
+		  <tr>
+			<td align="right">საკომისიო:</td>
+			<td>0.5%</td>
+		  </tr>
+		  <tr>
+			<td align="right">გადასახდელი თანხა:</td>
+			<td><input type="text" id="Tanxa" name="Tanxa"></td>
+		  </tr>
+		  <tr>
+			<td> </td>
+			<td><input type="submit"></td>
+		  </tr>
+
+		</table>
+	</form>
+	<script>
+	  var davalianeba = Math.floor(Math.random() * 10000)/100;
+	  document.getElementById("davalianeba").value = davalianeba;
+	  
+	  var Tanxa = davalianeba + ((davalianeba*0.5)/100);
+	  document.getElementById("Tanxa").value = Math.round(Tanxa*100)/100;
+	</script>
+	<footer>
+	  <p>Footer</p>
+	</footer>
+
+	</body>
+</html>

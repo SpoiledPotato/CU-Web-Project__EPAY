@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>EPAY კომუნალური</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		body {
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		header {
+		  background-color: #666;
+		  padding: 20px;
+		  text-align: center;
+		  font-size: 20px;
+		  color: white;
+		}
+
+		footer {
+		  background-color: #777;
+		  padding: 10px;
+		  text-align: center;
+		  color: white;
+		}
+
+		@media (max-width: 600px) {
+		  article {
+			width: 100%;
+			height: auto;
+		  }
+		}
+		</style>
+	</head>
+	
+	<body>
+	
+
+	<header>
+	  <h2>EPAY კომუნალური => წყალი => გადახდა => ქვითარი</h2>
+	</header>
+	<script>
+	  var args = window.location.search;
+	  console.log(args);
+	  args = args.substring(1,args.length);
+	  console.log(args);
+	  var splitargs = args.split("&");
+	  console.log(splitargs);
+	  
+	  var qviTari = splitargs[0].split("="); console.log(qviTari[1]);
+	  var davalianeba = splitargs[1].split("=");console.log(davalianeba[1]);
+	  var Tanxa = splitargs[2].split("=");console.log(Tanxa[1]);
+	  
+	  
+	</script>
+    <form id="F_qviTari" name="F_qviTari" action="" method="GET">
+		<table border="0" align="center">
+		  <tr>
+			<td align="right">ქვითრის ნომერი: </td>
+			<td><p id="QV"></p>(5 თანრიგი)</td>
+		  </tr>
+		  <tr>
+			<td align="right">დავალიანება:</td>
+			<td><p id="dav"></p></td>
+		  </tr>
+		  <tr>
+			<td align="right">საკომისიო:</td>
+			<td><p>0.5%</p></td>
+		  </tr>
+		  <tr>
+			<td align="right">გადასახდელი თანხა:</td>
+			<td><p id="Tanx" ></p></td>
+		  </tr>
+		  <tr>
+			<td> </td>
+			<td><input type="submit"></td>
+		  </tr>
+
+		</table>
+	</form>
+	<script>
+	  document.getElementById("QV").innerHTML = qviTari;
+	  document.getElementById("dav").innerHTML = davalianeba;
+	  document.getElementById("Tanx").innerHTML = Tanxa;
+	</script>
+	<footer>
+	  <p>Footer</p>
+	</footer>
+
+	</body>
+</html>
