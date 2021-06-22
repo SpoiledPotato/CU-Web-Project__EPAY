@@ -1,0 +1,105 @@
+@font-face {
+    font-family: myFont;
+    src: url(bpg_mrgvlovani_caps_2010.ttf);
+}
+
+body {
+    font-family: myFont;
+}
+
+.inner_container {
+    width: 358px;
+    min-height: 73px;
+    height: auto !important;
+    height: 73px;
+    padding: 15px 0 0 0;
+    margin: 0 auto;
+}
+
+.inner_container .boxes_two {
+    width: 174px;
+    min-height: 73px;
+    height: auto !important;
+    height: 73px;
+    float: left;
+    background: url('images/submenu.png') no-repeat top left;
+    margin-bottom: 9px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.inner_container .boxes_two:hover {
+    background: url('images/submenu_hover.png') no-repeat top left;
+}
+
+.inner_container .boxes_two .icon {
+    width: 56px;
+    min-height: 73px;
+    height: auto !important;
+    height: 73px;
+    float: left;
+}
+
+.inner_container .boxes_two .text {
+    width: 105px;
+    font-size: 10px;
+    color: #616161;
+    text-align: center;
+    float: left;
+    text-shadow: 0px 1px 0px #d1d1d1;
+    line-height: 1.3;
+}
+
+.inner_container .boxes_two:hover .text {
+    color: #FFF;
+    text-shadow: 0px 1px 0px #767676;
+}
+
+#electricity .icon {
+    background: url("images/electricity.png") no-repeat center center;
+}
+
+#electricity:hover .icon {
+    background: url("images/electricity_act.png") no-repeat center center;
+}
+
+#water .icon {
+    background: url("images/water.png") no-repeat center center;
+}
+
+#water:hover .icon {
+    background: url("images/water_act.png") no-repeat center center;
+}
+
+#cleaning .icon {
+    background: url("images/cleaning.png") no-repeat center center;
+}
+
+#cleaning:hover .icon {
+    background: url("images/cleaning_act.png") no-repeat center center;
+}
+
+#gas .icon {
+    background: url("images/gas.png") no-repeat center center;
+}
+
+#gas:hover .icon {
+    background: url("images/gas_act.png") no-repeat center center;
+}
+
+#together .icon {
+    background: url("images/together.png") no-repeat center center;
+}
+
+#together:hover .icon {
+    background: url("images/together_act.png") no-repeat center center;
+}
+
+.text {
+    margin-top: 31px;
+}
+
+#together .text {
+margin-top: 21px;
+margin-left: 5px;
+}
