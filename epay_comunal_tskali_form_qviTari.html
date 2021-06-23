@@ -1,48 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>EPAY კომუნალური</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-		* {
-		  box-sizing: border-box;
-		}
+<html lang="ge">
 
-		body {
-		  font-family: Arial, Helvetica, sans-serif;
-		}
-
-		header {
-		  background-color: #666;
-		  padding: 20px;
-		  text-align: center;
-		  font-size: 20px;
-		  color: white;
-		}
-
-		footer {
-		  background-color: #777;
-		  padding: 10px;
-		  text-align: center;
-		  color: white;
-		}
-
-		@media (max-width: 600px) {
-		  article {
-			width: 100%;
-			height: auto;
-		  }
-		}
-		</style>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EPAY კომუნალური</title>
+	<link rel="stylesheet" href="index.css">
+</head>
 	
 	<body>
-	
 
-	<header>
-	  <h2>EPAY კომუნალური => წყალი => გადახდა => ქვითარი</h2>
-	</header>
+		<header>
+			<h2><span class="menu_item" onclick="changeMenu('index')">EPAY</span> => <span class="menu_item" onclick="changeMenu('epay_comunal')">კომუნალური</span> => <span
+					class="menu_item" onclick="changeMenu('epay_comunal_tskali')">წყალი</span> => <span class="menu_item" onclick="changeMenu('epay_comunal_tskali_gwp')"> გადახდა</span> => <span style="color: burlywood;">ქვითარი</span></h2>
+		</header>
 	<script>
 	  var args = window.location.search;
 	  console.log(args);
@@ -87,9 +59,7 @@
 	  document.getElementById("dav").innerHTML = davalianeba;
 	  document.getElementById("Tanx").innerHTML = Tanxa;
 	</script>
-	<footer>
-	  <p>Footer</p>
-	</footer>
+	<script src="test.js"></script>
 
 	</body>
 </html>

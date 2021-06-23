@@ -148,39 +148,3 @@ header {
     font-size: 20px;
     color: white;
 }
-
-.widget_item {
-    width: 388px;
-    min-height: 78px;
-    height: 78px;
-    margin-bottom: 12px;
-    background: url("images/widget_collapsed_bg.png") no-repeat center center;
-    
-}
-
-.widget_item:hover {
-    background: url("images/widget_collapsed_bg_hover.png");
-    cursor: pointer;
-}
-
-.widget_item .menu_text {
-    width: 317px;
-    margin-top: 30px;
-    font-size: 13px;
-    color: #616161;
-    float: left;
-    text-shadow: 0px 1px 0px #d1d1d1;
-}
-
-.widget_item:hover .menu_text {
-    color: #FFF;
-    text-shadow: 0px 1px 0px #767676;
-}
-
-#test {
-    width: 56px;
-    min-height: 73px;
-    height: 73px;
-    float: left;
-    background: url("images/water.png") no-repeat center center;
-}
