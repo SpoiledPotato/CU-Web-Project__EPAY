@@ -5,52 +5,80 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EPAY კომუნალური</title>
+	<title>GWP - გადახდა</title>
 	<link rel="stylesheet" href="index.css">
 
+	<style>
+		td {
+			font-size: 11px;
+		}
+	</style>
 </head>
 
 <body>
 
 
 	<header>
-		<h2><span class="menu_item" onclick="changeMenu('index')">EPAY</span> => <span class="menu_item" onclick="changeMenu('epay_comunal')">კომუნალური</span> => <span
-				class="menu_item" onclick="changeMenu('epay_comunal_tskali')">წყალი</span> => <span style="color: burlywood;">გადახდა</span></h2>
+		<h2><span class="menu_item" onclick="changeMenu('index')">EPAY</span> => <span class="menu_item"
+				onclick="changeMenu('epay_comunal')">კომუნალური</span> => <span class="menu_item"
+				onclick="changeMenu('epay_comunal_tskali')">წყალი</span> => <span
+				style="color: burlywood;">გადახდა</span></h2>
 	</header>
 	<form id="F_qviTari" name="F_qviTari" action="epay_comunal_tskali_form_qviTari.html" method="GET">
 		<table border="0" align="center">
 			<tr>
-				<td align="right">ქვითრის ნომერი: </td>
-				<td><input type="text" id="qviTari" name="qviTari" required>(5 თანრიგი)</td>
+				<td align="right">მომხმარებელი </td>
+				<td><input class="inpt" type="number" id="qviTari" name="qviTari" required min="0"></td>
 			</tr>
 			<tr>
-				<td align="right">დავალიანება:</td>
-				<td><input type="text" id="davalianeba" name="davalianeba"></td>
+				<td></td>
+				<td class="btn" style="background: url(images/submit_button_liabilities.png) no-repeat;"
+					onclick="generateLiabilities(); this.onclick=null;"><span
+						style="font-size: 9.5px; color: white; padding-left: 22px;">დავალიანების გაგება</span></td>
 			</tr>
 			<tr>
-				<td align="right">საკომისიო:</td>
-				<td>0.5%</td>
+				<td align="right">მომხმარებლის სახელი </td>
+				<td><input class="inpt" type="text" name="" id="saxeli"></td>
 			</tr>
 			<tr>
-				<td align="right">გადასახდელი თანხა:</td>
-				<td><input type="text" id="Tanxa" name="Tanxa"></td>
+				<td align="right">დავალიანება </td>
+				<td><input class="inpt" type="text" id="davalianeba" name="davalianeba" readonly></td>
+			</tr>			
+			<tr>
+				<td>მომსახურების საკომისიო</td>
+				<td><b>2%</b></td>
 			</tr>
 			<tr>
-				<td> </td>
-				<td><input type="submit"></td>
+				<td align="right">გადასახდელი თანხა </td>
+				<td><input class="inpt" type="text" id="Tanxa" name="Tanxa" required></td>
+			</tr>
+			<tr>
+				<td align="right">ბარათი</td>
+				<td><select style="width: 158px;" name="card" id="card" required>
+						<option value="">აირჩიეთ ბარათი</option>
+						<option value="bog">საქართველოს ბანკის ბარათი</option>
+						<option value="srb">სილქ როუდ ბანკი</option>
+						<option value="other">სხვა ბანკის ბარათი</option>
+					</select></td>
 			</tr>
 
+
+			<!--BUTTONS-->
+			<tr>
+				<td align="right"><input class="btn" style="background: url(images/pay_button_default.png) no-repeat;"
+						type="submit" value="გადახდა"></td>
+				<td><input class="btn" style="background: url(images/pay_button_default.png) no-repeat;" type="submit"
+						value="კალათში დამატება" onclick="toCart();"></td>
+			</tr>			
 		</table>
 	</form>
-	<script>
-		var davalianeba = Math.floor(Math.random() * 10000) / 100;
-		document.getElementById("davalianeba").value = davalianeba;
-
-		var Tanxa = davalianeba + ((davalianeba * 0.5) / 100);
-		document.getElementById("Tanxa").value = Math.round(Tanxa * 100) / 100;
-	</script>
 
 	<script src="test.js"></script>
+	<script>
+		if (document.getElementById("card").value == "bog") {
+			alert("yep")
+		}
+	</script>
 </body>
 
 </html>

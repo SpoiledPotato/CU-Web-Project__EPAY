@@ -5,61 +5,69 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EPAY კომუნალური</title>
+	<title>ქვითარი</title>
 	<link rel="stylesheet" href="index.css">
 </head>
-	
-	<body>
 
-		<header>
-			<h2><span class="menu_item" onclick="changeMenu('index')">EPAY</span> => <span class="menu_item" onclick="changeMenu('epay_comunal')">კომუნალური</span> => <span
-					class="menu_item" onclick="changeMenu('epay_comunal_tskali')">წყალი</span> => <span class="menu_item" onclick="changeMenu('epay_comunal_tskali_gwp')"> გადახდა</span> => <span style="color: burlywood;">ქვითარი</span></h2>
-		</header>
+<body>
+
+	<header>
+		<h2><span class="menu_item" onclick="changeMenu('index')">EPAY</span> => <span class="menu_item"
+				onclick="changeMenu('epay_comunal')">კომუნალური</span> => <span class="menu_item"
+				onclick="changeMenu('epay_comunal_tskali')">წყალი</span> => <span class="menu_item"
+				onclick="changeMenu('epay_comunal_tskali_gwp')"> გადახდა</span> => <span
+				style="color: burlywood;">ქვითარი</span></h2>
+	</header>
+
 	<script>
-	  var args = window.location.search;
-	  console.log(args);
-	  args = args.substring(1,args.length);
-	  console.log(args);
-	  var splitargs = args.split("&");
-	  console.log(splitargs);
-	  
-	  var qviTari = splitargs[0].split("="); console.log(qviTari[1]);
-	  var davalianeba = splitargs[1].split("=");console.log(davalianeba[1]);
-	  var Tanxa = splitargs[2].split("=");console.log(Tanxa[1]);
-	  
-	  
+
+		var args = window.location.search;
+		args = args.substring(1, args.length);
+		var splitargs = args.split("&");
+
+		var qviTari = splitargs[0].split("=");
+		var davalianeba = splitargs[1].split("=");
+		var Tanxa = splitargs[2].split("=");
+
+
 	</script>
-    <form id="F_qviTari" name="F_qviTari" action="" method="GET">
+
+	<form id="F_qviTari" name="F_qviTari" action="" method="GET">
 		<table border="0" align="center">
-		  <tr>
-			<td align="right">ქვითრის ნომერი: </td>
-			<td><p id="QV"></p>(5 თანრიგი)</td>
-		  </tr>
-		  <tr>
-			<td align="right">დავალიანება:</td>
-			<td><p id="dav"></p></td>
-		  </tr>
-		  <tr>
-			<td align="right">საკომისიო:</td>
-			<td><p>0.5%</p></td>
-		  </tr>
-		  <tr>
-			<td align="right">გადასახდელი თანხა:</td>
-			<td><p id="Tanx" ></p></td>
-		  </tr>
-		  <tr>
-			<td> </td>
-			<td><input type="submit"></td>
-		  </tr>
+			<tr>
+				<td align="right">ქვითრის ნომერი: </td>
+				<td>
+					<p id="QV"></p>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">დავალიანება:</td>
+				<td>
+					<p id="dav"></p>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">საკომისიო:</td>
+				<td>
+					<p>2%</p>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">გადასახდელი თანხა:</td>
+				<td>
+					<p id="Tanx"></p>
+				</td>
+			</tr>
 
 		</table>
 	</form>
 	<script>
-	  document.getElementById("QV").innerHTML = qviTari;
-	  document.getElementById("dav").innerHTML = davalianeba;
-	  document.getElementById("Tanx").innerHTML = Tanxa;
+		document.getElementById("QV").innerHTML = qviTari;
+		document.getElementById("dav").innerHTML = davalianeba;
+		document.getElementById("Tanx").innerHTML = Tanxa;
 	</script>
 	<script src="test.js"></script>
 
-	</body>
+</body>
+
 </html>
