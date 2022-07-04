@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GWP - გადახდა</title>
 	<link rel="stylesheet" href="index.css">
+	<script src="index.js"></script>
 
 	<style>
 		td {
@@ -16,8 +17,6 @@
 </head>
 
 <body>
-
-
 	<header>
 		<h2><span class="menu_item" onclick="changeMenu('index')">EPAY</span> => <span class="menu_item"
 				onclick="changeMenu('epay_comunal')">კომუნალური</span> => <span class="menu_item"
@@ -43,7 +42,7 @@
 			<tr>
 				<td align="right">დავალიანება </td>
 				<td><input class="inpt" type="text" id="davalianeba" name="davalianeba" readonly></td>
-			</tr>			
+			</tr>
 			<tr>
 				<td>მომსახურების საკომისიო</td>
 				<td><b>2%</b></td>
@@ -69,11 +68,10 @@
 						type="submit" value="გადახდა"></td>
 				<td><input class="btn" style="background: url(images/pay_button_default.png) no-repeat;" type="submit"
 						value="კალათში დამატება" onclick="toCart();"></td>
-			</tr>			
+			</tr>
 		</table>
 	</form>
 
-	<script src="test.js"></script>
 	<script>
 		if (document.getElementById("card").value == "bog") {
 			alert("yep")

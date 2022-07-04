@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>EPAY კომუნალური</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+
+		body {
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		header {
+		  background-color: #666;
+		  padding: 20px;
+		  text-align: center;
+		  font-size: 20px;
+		  color: white;
+		}
+
+		footer {
+		  background-color: #777;
+		  padding: 10px;
+		  text-align: center;
+		  color: white;
+		  position: absolute;
+		  bottom: 0;
+		  width: 100%;
+		  height: 40px;
+		}
+
+		@media (max-width: 600px) {
+		  article {
+			width: 100%;
+			height: auto;
+		  }
+		}
+
+		.inp_field {
+			height: 30px;
+			width: 155px;
+			border: 1px solid gray;
+			border-radius: 4px;
+		}
+
+		#btn_submit {
+			height: 30px;
+			width: 155px;
+		}
+
+		#calc {
+			cursor: pointer;
+		}
+		</style>
+	</head>
+	
+	<body>
+	
+
+	<header>
+	  <h2>EPAY კომუნალური => დენი => თელასი</h2>
+	</header>
+    <form id="F_qviTari" name="F_qviTari" action="epay_communal_electricity_form_qviTari.html" method="GET">
+		<table border="0" align="center">
+		  <tr>
+		    <td colspan="2" align="center"><img src="images/ლოგო_თელასი.png"></td>
+		  </tr>
+		  <tr>
+			<td align="right">ქვითრის ნომერი: </td>
+			<td><input class="inp_field" type="number" id="qviTari" name="qviTari" min="10000" max="99999" required>5 ციფრი</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td><img id="calc" src="images/თელასი_დავალიანების_გაგება.png" onclick="calculate();"></td>
+		  </tr>
+		  <tr>
+			<td align="right">დავალიანება:</td>
+			<td><input class="inp_field" type="text" id="davalianeba" name="davalianeba"></td>
+		  </tr>
+		  <tr>
+			<td align="right">საკომისიო:</td>
+			<td>0.5%</td>
+		  </tr>
+		  <tr>
+			<td align="right">გადასახდელი თანხა:</td>
+			<td><input class="inp_field" type="text" id="Tanxa" name="Tanxa"></td>
+		  </tr>
+		  <tr>
+			<td> </td>
+			<td><input id="btn_submit" type="submit" value="გადახდა"></td>
+		  </tr>
+
+		</table>
+	</form>
+	<script>
+	  var davalianeba;
+	  var Tanxa;
+	  var rand;
+	  var qvit;
+	  function random() {
+		var x = Math.sin(qvit) * 10000;
+		return x - Math.floor(x);
+	  }
+	  function calculate() {
+		qvit = document.getElementById("qviTari").value;
+		rand = random();
+		if(qvit >= 10000 && qvit <= 99999)
+		{
+			var tmp = rand*150;
+			davalianeba = Math.round(tmp * 100)/100;
+			document.getElementById("davalianeba").value = davalianeba;
+	  
+			Tanxa = davalianeba + ((davalianeba*0.5)/100);
+			document.getElementById("Tanxa").value = Math.round(Tanxa*100)/100;
+		}
+	  }
+
+	</script>
+	<footer>
+		ყველა უფლება დაცულია ©2021
+	</footer>
+
+	</body>
+</html>
